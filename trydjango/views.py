@@ -9,18 +9,23 @@ from django.template.loader import render_to_string, get_template
 
 
 
-
-def home_view(request):
+def home_view(request, *args, **kwargs):
     """
     Take in a request
     return html as response
     """
+
+    print(id)
 
     #hard coded
     name = "Aman" 
 
     #pseudo random
     random_id = random.randint(1, 3) 
+
+    my_list= [13, 423, 54, 346, 235, 346]
+    article_queryset = Article.objects.all()  #this is a queryset, not a list, but behaves like a list
+    my_list = article_queryset
 
     #from database
     article_obj = Article.objects.get(id=random_id)
@@ -35,6 +40,7 @@ def home_view(request):
     #ALT1
     
     context = {
+        "objectlist": my_list,
         "title": article_title,
         "content": article_content,
         "id": article_obj.id
