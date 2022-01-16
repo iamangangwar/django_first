@@ -21,7 +21,10 @@ from articles import views
 
 urlpatterns = [
     path('', home_view), #index / home / root
+    path('articles/', views.article_search_view),
+    path('articles/create/', views.article_create_view),
     path('articles/<int:id>/', views.article_detail_view), #articles/<{datatype}:{variable}>
     # re_path(r'articles/(?P<id>\d+)/$', home_view),
     path('admin/', admin.site.urls),
 ]
+# ORDER MATTERS ABOVE
