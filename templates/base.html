@@ -5,8 +5,12 @@
     </head>
     <body>
         <h1>Hello World</h1>
-        {% block article %}
+        <form action='/articles/' method='GET'> <!-- searches query in /articles/ -->
+            <input type='text' name='q' />
+            <input type='submit' />
+        </form>
+        {% block content %}
         <h3>This line will not be displayed!</h3>
-        {% endblock article %}
+        {% endblock content %}
     </body>
 </html>
