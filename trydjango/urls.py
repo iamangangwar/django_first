@@ -21,7 +21,7 @@ from articles.views import (
     article_create_view,
     article_detail_view
 )
-from accounts.views import login_view, logout_view
+from accounts.views import login_view, logout_view, register_view
 
 
 urlpatterns = [
@@ -32,6 +32,7 @@ urlpatterns = [
     # re_path(r'articles/(?P<id>\d+)/$', home_view),
     path('admin/', admin.site.urls),
     path('login/', login_view),
-    path('logout/', logout_view)
+    path('logout/', logout_view),
+    path('register/', register_view)
 ]
 # ORDER MATTERS ABOVE
